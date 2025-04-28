@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap");
 
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px; /* Optional: Add padding for spacing from the top */
 }
 
 .button {
@@ -44,8 +45,9 @@
 }
 
 .frame {
-  width: 400px;
-  aspect-ratio: 1/1;
+  width: 50vw;
+  height: auto;
+  object-fit: contain;
   box-sizing: border-box;
   border-radius: 8px;
   border: 3px solid #343a40;
