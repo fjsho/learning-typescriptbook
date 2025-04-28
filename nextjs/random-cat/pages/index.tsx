@@ -21,8 +21,22 @@ const IndexPage: NextPage = () => {
         []
     ); 
 
+    // ボタンをクリックした時に画像を読み込む処理
+    const handleClick = async () => {
+        setLoading(true); // ローディング中にする
+        const newImage = await fetchImage();
+        setImageUrl(newImage.url);
+        setLoading(false); // ローディング終了
+    };
+
     // ローディング中じゃなければ画像を表示する
-    return <div>{loading || <img src={imageUrl} />}</div>;
+    return (
+        <div>
+            <button onClick={handleClick}>他のにゃんこもみる</button>
+            <div>{loading || <img src={imageUrl} />}</div>
+        </div>
+
+    );
 };
 
 type Image = {

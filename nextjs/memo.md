@@ -12,6 +12,13 @@
 </div>;
 ```
 
+- SSR（server-side rendering）
+    - ウェブアプリケーションのレンダリングをサーバサイドで行う技術
+    - サーバーがHTMLを生成してブラウザに送信する
+    - Nextjsはサーバーサイドレンダリング（SSR）をサポートしている。
+        - Reactはクライアントサイドレンダリング（CSR）に特化
+    - これにより初回読み込み速度が向上する。SEOやパフォーマンスの面でもGood
+
 ### memo
 
 - なんで？ →「React で開発する場合、webpack のようなバンドラーを用いるのが普通です。」
@@ -32,3 +39,5 @@
   1. バンドル/最適化：webpack などのバンドラ
      - 1 つの JavaScript ファイル（`.js`）ファイルになる
   1. ブラウザが読み込み: HTML から JavaScript が読み込まれ、DOM に反映される
+- CSR（crient-side rendering）
+    - ブラウザがHTML, CSS, JSファイルをダウンロードし、JavaScriptを使用してページをレンダリングする。
