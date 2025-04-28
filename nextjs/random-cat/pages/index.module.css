@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap");
 
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px; /* Optional: Add padding for spacing from the top */
 }
 
 .button {
