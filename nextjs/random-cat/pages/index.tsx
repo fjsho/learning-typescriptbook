@@ -1,25 +1,16 @@
-import {NextPage} from 'next';
+import {GetServerSideProps, NextPage} from 'next';
 import { useState, useEffect } from 'react';
 
-const IndexPage: NextPage = () => {
-    // useStateを用いた状態の定義
-    const [imageUrl, setImageUrl] = useState("");
-    const [loading, setLoading] = useState(true); // ローディング中（API呼び出し中）かどうかの状態
+// getServerSidePropsから渡されるpropsの型
+type Props = {
+    initialImageUrl: string;
+}
 
-    // マウント時に画像を読み込む宣言
-    useEffect(
-        // 第一引数は実行する関数。無名関数を実行している。
-        // useEffectは非同期関数（async()）を直接受け取れないので、無名関数を定義してその中でasync関数を実行する。
-        () => {
-        fetchImage().then((newImage) => {
-            setImageUrl(newImage.url);
-            setLoading(false);
-        });
-    },
-        // 第二引数は処理の実行タイミングを指定する。
-        // 空の配列を渡すことで、コンポーネントがマウントされた時のみ実行される。
-        []
-    ); 
+//ページコンポーネント関数にpropsを受け取る引数を追加
+const IndexPage: NextPage<Props> = ({initialImageUrl}) => {
+    // useStateを用いた状態の定義
+    const [imageUrl, setImageUrl] = useState(initialImageUrl); 
+    const [loading, setLoading] = useState(false); // ローディング中（API呼び出し中）かどうかの状態
 
     // ボタンをクリックした時に画像を読み込む処理
     const handleClick = async () => {
@@ -38,6 +29,16 @@ const IndexPage: NextPage = () => {
 
     );
 };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    // サーバーサイドで画像を取得
+    const image = await fetchImage();
+    return {
+        props: {
+            initialImageUrl: image.url,
+        },
+    };
+}
 
 type Image = {
     url: string;
