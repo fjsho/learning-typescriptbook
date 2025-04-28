@@ -7,7 +7,7 @@
     min-height: 100vh;
     flex-direction: column;
     gap: 20px;
-    padding-top: 20px; /* Optional: Add padding for spacing from the top */
+    padding-top: 40px; /* Optional: Add padding for spacing from the top */
 }
 
 .button {
@@ -45,7 +45,7 @@
 }
 
 .frame {
-  width: 50rem;
+  width: 50vw;
   height: auto;
   object-fit: contain;
   box-sizing: border-box;
