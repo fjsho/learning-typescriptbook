@@ -1,0 +1,10 @@
+{
+    "name": "jest-tutorial",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "@types/jest": "^28.1.8",
+        "jest": "^28.1.3",
+        "ts-jest": "^28.0.8",
+        "typescript": "^5.8.3"
+    }
+}
